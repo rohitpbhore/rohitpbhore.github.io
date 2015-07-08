@@ -2,7 +2,7 @@
 title: Rohit Bhore
 email: rohitpbhore@gmail.com
 description: > # this means to ignore newlines until "baseurl:"
-  Ruby on Rails Developer at Clarion Clarion Technologies Pv. Ltd.
+  Ruby on Rails Developer at Clarion Technologies Pvt. Ltd.
 baseurl: "" # the subpath of your site, e.g. /blog/
 url: "http://rohitbhore.com" # the base hostname & protocol for your site
 twitter_username: rohitbhore
