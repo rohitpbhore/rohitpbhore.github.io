@@ -10,10 +10,12 @@ When I was building ruby gem first time, I wanted to add rake task and ERB templ
 To help others, I am jotting down the points which I used to add ERB template and tasks into the gem by using Railtie. Let me know if you found it useful.
 
 **Step1. Generate Gem structure**
+
 This creates the "foo" directory with the minimum gem structure.
 
 `$ bundle gem foo`
 
+```
 foo
 ├── .gitignore
 ├── Gemfile
@@ -25,8 +27,10 @@ foo
   ├── foo
   │ └── version.rb
   └── foo.rb
+```
 
 **Step2. Update configuration:**
+
 The file(foo.gemspec) provides metadata about the gem, like the name, description, author, license, and any gem dependencies required for it to work. Update it as per your requirements.
 foo.gemspec
 -----------------
@@ -58,6 +62,7 @@ end
 {% endhighlight %}
 
 **Step3: Define Gem version**
+
 lib/foo/version.rb
 This file contains the version number. With every new release, it's necessary to update the version number to reflect the latest available version on RubyGems.org.
 
@@ -68,6 +73,7 @@ end
 {% endhighlight %}
 
 **Step4: Add any initializers**
+
 lib/foo.rb
 This is the file that is first loaded by default when your gem is required by Bundler.
 It initially contains a reference to the version file. Mostly the code related to initializing the gem can be kept here.
@@ -81,6 +87,7 @@ end
 {% endhighlight %}
 
 **Step5: Build your Gem**
+
 Now your gem base is ready. Go create your gem functionality. I can help you out by telling how to add tasks and html template in the gem.
 
 How to add Templates?
@@ -149,11 +156,13 @@ end
 {% endhighlight %}
 
 **Step6: Release Gem**
+
 It's time to release now. build command builds a binary file with the gem name and version into the application's root folder.
 
 `$ gem build foo.gemspec`
 
 **Step7: Publish it**
+
 We are able to create .gem file through above command.
 
 `$ gem push foo-0.0.1.gem`
@@ -161,6 +170,7 @@ We are able to create .gem file through above command.
 On the successful release, your gem will be accessible through RubyGems.org
 
 **Finally: Use it**
+
 Add Gem into application's Gemfile and bundle it.
 
 `$ bundle`
@@ -174,5 +184,7 @@ You should have to see the task in the task list
 `rake foo:run 	# Run Foo`
 
 **References**
+
 Loading rake tasks http://edgeapi.rubyonrails.org/classes/Rails/Railtie.html
+
 Routes and controller for Gem http://www.smashingmagazine.com/2011/06/23/a-guide-to-starting-your-own-rails-engine-gem/
